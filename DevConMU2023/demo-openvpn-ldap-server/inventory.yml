@@ -1,0 +1,59 @@
+all:
+  hosts:
+  vars:
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o ConnectTimeout=5"
+    ldap_domain: "ldap.dev.devcon.com"
+    ldap_company_name: "devcon"
+    ldap_deployment_env: "dev"
+    ansible_ssh_user: root
+    ldap_admin_password: "If8soo7iecihohY6ohgheehaib3yaree"
+    ldap_superuser_fname: "fadmin"
+    ldap_superuser_lname: "ladmin"
+    ldap_superuser_sshkey: "NO ACCESS"
+    ldap_superuser_mail: "admin@devcon.com"
+    ldap_superuser_password: "vohthiezo5thet1da3eiXohdeojahs6A"
+    ldap_superuser_password_hash: "{SSHA}ehLhvD5HDItIW23aSvWOcOEH+IsUCz60"
+    ldap_superuser_uidnumber: 1000
+    ldap_superuser_gidnumber: 1000
+    ldap_sync_binddn_password: "eichoch7iech+iaTh3ohsaiz8duG7i"
+    ldap_master_ip: 192.167.100.221
+    ansible_encrypyed_dir: "/home/girishm/Documents/devcons-devcons-deployments/ldap-dev-lab/encrypted_dir"
+    ldap_first_install: true
+  children:
+    ldap_master:
+      hosts:
+        DE01-HZ-dev-lab-02:
+          ansible_host: 127.0.0.1
+          ansible_port: 2478
+      vars:
+        ldap_installation: "server"
+        ldap_country_name: "SG"
+        ldap_state_name: "Germany"
+        ldap_locality_name: "Germany"
+        ldap_organization_name: "devcon"
+        ldap_organizational_unit_name: "Security"
+        ldap_email_address: "dev@devcons.com"
+        ldap_ca_password: "ohLaNie3ahngai0ijoh2su2AavioBooS"
+        slapdump_email: "dev@devcons.com"
+        slapddump_dir: /usr/local/devcon/dump
+        slapdump_minio_cloud: "minio"
+        slapdump_minio_bucket: "slapdmasterbackup"
+        slapdump_log_dir: "/var/log/slapdump/"
+        slapdump_logfile_path: "/usr/local/devcon/logs/slapd-backup-$DATE.log"
+        slapdump_retention_days: 7
+        ldap_groups:
+          - name: "main_group"
+            gid: 1002
+        ldap_users:
+          - first_name: "John"
+            last_name: "Doe"
+            password: "Isiph@oobaib#ufakofingiev=air7ei"
+            email: "john@devcons.com"
+            gid: 1002
+            uid: 1001
+            ssh_key: "NO ACCESS"
+        ldap_services:
+          - name: "readonly"
+            description: "Read Only Service"
+            gid: 2000
+            password: "{SSHA}+j06xgZopiLeuON9nfTF6XW62v3UmNw0" # laigh7vae#quaeree=tie(w8okie@Sh5

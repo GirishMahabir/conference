@@ -1,0 +1,11 @@
+- src: git+https://girish:glpat-VwFTJLzGsYZvsgznTJyf@git.oceandba.com/oceandba-automation/ansible/roles/elk-stack/consul.git
+  name: consul
+  version: "fe/Initial-Consul-Install"
+
+- src: git+https://girish:glpat-VwFTJLzGsYZvsgznTJyf@git.oceandba.com/oceandba-automation/ansible/roles/elk-stack/fabio.git
+  name: fabio
+  version: "fe/Initial_fabio_role"
+
+- src: git+https://girish:glpat-VwFTJLzGsYZvsgznTJyf@git.oceandba.com/oceandba-automation/ansible/roles/ldap.git
+  name: ldap
+  version: develop

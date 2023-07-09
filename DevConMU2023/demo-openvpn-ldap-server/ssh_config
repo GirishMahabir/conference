@@ -1,0 +1,31 @@
+Host *
+    ForwardAgent yes
+    IdentityFile /home/girishm/.ssh/id_rsa
+    GSSAPIDelegateCredentials yes
+    HashKnownHosts no
+    GSSAPIAuthentication yes
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    ControlMaster auto
+    ControlPath  ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 600
+    User root
+
+Match host "95.216.16.152" exec "knock -d 500 95.216.16.152 10021 10023 50078 1078"
+    Host girish-lab
+    HostName 95.216.16.152
+    Port 10022
+    User root
+    ForwardAgent yes
+
+Host girish-lab2
+    HostName 88.99.68.203
+    Port 10022
+    User root
+    ProxyJump girish-lab
+    ForwardAgent yes
+
+Host demo-openvpn-ldap-server
+    Hostname 192.168.89.8
+    Port 22
+    User root
+    ProxyJump girish-lab2

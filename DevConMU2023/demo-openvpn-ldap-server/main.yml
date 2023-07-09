@@ -1,0 +1,3 @@
+- hosts: ldap_master
+  roles:
+    - ldap
