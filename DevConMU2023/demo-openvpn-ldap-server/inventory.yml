@@ -42,7 +42,7 @@ all:
         slapdump_logfile_path: "/usr/local/devcon/logs/slapd-backup-$DATE.log"
         slapdump_retention_days: 7
         ldap_groups:
-          - name: "main_group"
+          - name: "vpn_access"
             gid: 1002
         ldap_users:
           - first_name: "John"
